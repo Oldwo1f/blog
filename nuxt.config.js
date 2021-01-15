@@ -1,6 +1,10 @@
 import webpack from 'webpack'
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
+  server: {
+    port: 5001, // par défaut : 3000
+    host: '0.0.0.0' // par défaut : localhost
+  },
   head: {
     title: 'Alexis',
     meta: [
