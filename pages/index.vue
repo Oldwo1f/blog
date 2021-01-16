@@ -167,7 +167,7 @@ export default {
 		
 	},
     async asyncData({$axios }) {
-	  const post = await $axios.get(`http://localhost:4000/api/articles`)
+	  const post = await $axios.get(`/articles`)
 	 
       return { articles : post.data }
     }

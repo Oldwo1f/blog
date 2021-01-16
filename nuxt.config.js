@@ -43,7 +43,6 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
     '@nuxtjs/dayjs',
     '@nuxtjs/markdownit'
 
@@ -55,17 +54,7 @@ export default {
     locales: ['en', 'fr'],
     defaultLocale: 'fr'
   },
-  proxy: {
-    '/api': {
-      target: 'http://localhost:4000',
-      pathRewrite: {
-        '^/api': '/'
-      }
-    },
-    '/uploads': {
-      target: 'http://localhost:4000'
-    }
-  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     plugins: [
