@@ -57,13 +57,13 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'http://localhost:1337',
+      target: 'http://localhost:4000',
       pathRewrite: {
         '^/api': '/'
       }
     },
     '/uploads': {
-      target: 'http://localhost:1337'
+      target: 'http://localhost:4000'
     }
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)

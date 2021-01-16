@@ -314,7 +314,7 @@ export default {
 			console.log(id);
 			console.log(this.authorToPost);
 			console.log(this.messageToPost);
-			const req = await this.$axios.post(`http://localhost:3000/api/coments`,{author:this.authorToPost,text:this.messageToPost,article:id})
+			const req = await this.$axios.post(`http://localhost:4000/api/coments`,{author:this.authorToPost,text:this.messageToPost,article:id})
 
 			 console.log(req.data);
 		}
@@ -329,7 +329,7 @@ export default {
 	},
     async asyncData({$axios,route,params}) {
         console.log(params)
-      const post = await $axios.get(`http://localhost:3000/api/articles/`+params.id)
+      const post = await $axios.get(`http://localhost:4000/api/articles/`+params.id)
 
       const query = qs.stringify({
         _where: [{ published_at_gt: post.data.published_at }],
@@ -342,8 +342,8 @@ export default {
         console.log(query);
         console.log('__________________________________________________________');
       
-      const previousarticle = await $axios.get(`http://localhost:3000/api/articles?${query}&_sort=published_at:ASC&_limit=1`)
-      const nextarticle = await $axios.get(`http://localhost:3000/api/articles?${query2}&_sort=published_at:DESC&_limit=1`)
+      const previousarticle = await $axios.get(`http://localhost:4000/api/articles?${query}&_sort=published_at:ASC&_limit=1`)
+      const nextarticle = await $axios.get(`http://localhost:4000/api/articles?${query2}&_sort=published_at:DESC&_limit=1`)
       console.log(previousarticle.data);
       return { article : post.data,previousarticle:previousarticle.data,nextarticle:nextarticle.data }
     }
