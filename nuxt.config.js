@@ -56,12 +56,14 @@ export default {
     defaultLocale: 'fr'
   },
   axios: {
-    proxy: true
-
+    proxy: true,
+    baseURL: 'http://localhost:4000',
+    prefix: '/api/',
+    browserBaseURL: '/api/'
   },
   proxy: {
     '/api/': {
-      target: 'http://localhost:4002',
+      target: 'http://localhost:4000',
       pathRewrite: {
         '/api/': ''
       }
